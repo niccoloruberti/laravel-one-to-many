@@ -21,6 +21,12 @@
             <h3>Link</h3>
             <div class="border">{{ $project->link_repository }}</div>
         </div>
+        @if(isset($project->type->name))
+        <div class="col-12 mt-5">
+            <h3>Tipologia del progetto</h3>
+            <div class="border">{{ $project->type->name }}</div>
+        </div>
+        @endif
         @if($project->img)
         <div class="col-12 mt-5">
             <h3>Copertina</h3>
