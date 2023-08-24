@@ -50,6 +50,7 @@
                     <label class="control-label">Argomento</label>
                     <input class="form-control" type="text" id="topic" name="topic" placeholder="Argomento" value="{{ old('topic') }}">
                 </div>
+                {{-- tipologia di progetto --}}
                 <div class="form-group mt-3 d-flex flex-column w-25">
                     <label class="control-label">Tipo di progetto</label>
                     <select class="form-control" name="type_id" id="type_id">

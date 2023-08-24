@@ -77,8 +77,10 @@ class ProjectController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit(Project $project)
-    {
-        return view('admin.projects.edit', compact('project'));
+    {   
+        $types = Type::all();
+
+        return view('admin.projects.edit', compact('project', 'types'));
     }
 
     /**
@@ -92,11 +94,11 @@ class ProjectController extends Controller
     {
         $data = $request->all();
 
-        if($project->img) {
+        if($project->img && isset($data['img'])) {
             Storage::delete($project->img);
         }
 
-        if($data['img']) {
+        if(isset($data['img'])) {
             $data['img'] = Storage::put('img_thumb', $data['img']);
         }
 

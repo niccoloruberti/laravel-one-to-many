@@ -58,6 +58,18 @@
                     <div class="text-danger">{{ $message }}</div>
                     @enderror
                 </div>
+                <div class="form-group mt-3 d-flex flex-column w-25">
+                    <label class="control-label">Tipo di progetto</label>
+                    <select class="form-control" name="type_id" id="type_id">
+                        <option value="">Seleziona il tipo di progetto</option>
+                        @foreach($types as $type)
+                            <option {{ $type->id == old('type_id', $project->type_id) ? 'selected' : ''}} value="{{ $type->id }}">{{ $type->name }}</option>
+                        @endforeach
+                    </select>
+                    @error('type_id')
+                        <div class="text-danger">{{ $message }}</div>
+                    @enderror
+                </div>
                 <div class="form-group mt-3">
                     <button type="submit" class="btn btn-sm btn-success">Modifica</button>
                 </div>
