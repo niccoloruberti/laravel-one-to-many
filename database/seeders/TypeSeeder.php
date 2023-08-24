@@ -16,7 +16,7 @@ class TypeSeeder extends Seeder
      */
     public function run(Faker $faker)
     {
-        for($i = 1; $i <= 10; $i++) {
+        for($i = 1; $i <= 2; $i++) {
 
             $type = new Type();
 

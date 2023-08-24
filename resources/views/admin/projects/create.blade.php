@@ -50,6 +50,18 @@
                     <label class="control-label">Argomento</label>
                     <input class="form-control" type="text" id="topic" name="topic" placeholder="Argomento" value="{{ old('topic') }}">
                 </div>
+                <div class="form-group mt-3 d-flex flex-column w-25">
+                    <label class="control-label">Tipo di progetto</label>
+                    <select class="form-control" name="type_id" id="type_id">
+                        <option value="">Seleziona il tipo di progetto</option>
+                        @foreach($types as $type)
+                            <option value="{{ $type->id }}">{{ $type->name }}</option>
+                        @endforeach
+                    </select>
+                    @error('type_id')
+                        <div class="text-danger">{{ $message }}</div>
+                    @enderror
+                </div>
                 <div class="form-group mt-3">
                     <button type="submit" class="btn btn-sm btn-success">Aggiungi</button>
                 </div>
